@@ -1,0 +1,290 @@
+[gd_scene format=3 uid="uid://bma8dohyd7rkq"]
+
+[ext_resource type="Script" uid="uid://bhifoi7q7f85p" path="res://scenes/settings_menu.gd" id="1_nt7q6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hyap7"]
+
+[node name="UI" type="Node2D" unique_id=69194739]
+
+[node name="SettingsMenu" type="CanvasLayer" parent="." unique_id=1014932951]
+script = ExtResource("1_nt7q6")
+
+[node name="Sprite2D" type="Sprite2D" parent="SettingsMenu" unique_id=1778530100]
+modulate = Color(0.19545117, 0.29749167, 0.31686395, 1)
+show_behind_parent = true
+position = Vector2(295.99997, 501.49997)
+scale = Vector2(653.99994, 1007)
+texture = SubResource("CanvasTexture_hyap7")
+
+[node name="labels" type="Control" parent="SettingsMenu" unique_id=215567798]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=2052756087]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 176.0
+offset_right = 428.0
+offset_bottom = 241.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Episode Number"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=838109357]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 69.0
+offset_right = 428.0
+offset_bottom = 140.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Saved File Destination"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=330014291]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 241.0
+offset_right = 428.0
+offset_bottom = 306.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Generate Folders for Cuts?"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=178868654]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 306.0
+offset_right = 428.0
+offset_bottom = 371.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Use Custom Cut Range?"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=1106142555]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 360.0
+offset_right = 428.0
+offset_bottom = 425.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Input Cut range"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=1088068569]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 476.0
+offset_right = 428.0
+offset_bottom = 541.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Continue from last"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=723310875]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 541.0
+offset_right = 266.0
+offset_bottom = 606.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Screenshot Assist"
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=976123533]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 541.0
+offset_right = 565.0
+offset_bottom = 606.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Customise Hotkeys"
+
+[node name="RichTextLabel11" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=748065405]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 624.0
+offset_right = 481.0
+offset_bottom = 689.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Cup up/down"
+
+[node name="RichTextLabel12" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=1141134082]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 675.0
+offset_right = 505.0
+offset_bottom = 740.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Panel up/down"
+
+[node name="RichTextLabel13" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=1430119121]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 721.0
+offset_right = 505.0
+offset_bottom = 797.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Toggle locked size"
+
+[node name="RichTextLabel14" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=2025236092]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 786.0
+offset_right = 505.0
+offset_bottom = 866.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Toggle locked size"
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=1268982440]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 622.0
+offset_right = 266.0
+offset_bottom = 687.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Default Aspect Ratio"
+
+[node name="RichTextLabel10" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=433020601]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 732.0
+offset_right = 266.0
+offset_bottom = 797.0
+theme_override_font_sizes/normal_font_size = 24
+text = "Set screenshot size"
+
+[node name="interactable" type="Control" parent="SettingsMenu" unique_id=1801154989]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text" type="Control" parent="SettingsMenu/interactable" unique_id=1206123384]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FilePath" type="TextEdit" parent="SettingsMenu/interactable/Text" unique_id=1091944591]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 113.0
+offset_right = 578.0
+offset_bottom = 161.0
+placeholder_text = "e.g. Document/"
+
+[node name="CutRange" type="TextEdit" parent="SettingsMenu/interactable/Text" unique_id=446395611]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 410.0
+offset_right = 578.0
+offset_bottom = 458.0
+placeholder_text = "1-5, 2-10, 13, 101-150"
+editable = false
+deselect_on_focus_loss_enabled = false
+
+[node name="EpisodeNumber" type="TextEdit" parent="SettingsMenu/interactable/Text" unique_id=1195414968]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 176.0
+offset_right = 481.0
+offset_bottom = 222.0
+placeholder_text = "1"
+
+[node name="TextEdit4" type="TextEdit" parent="SettingsMenu/interactable/Text" unique_id=1771326236]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 675.0
+offset_right = 154.0
+offset_bottom = 721.0
+text = "16:9"
+placeholder_text = "16:9"
+
+[node name="Checkbox" type="Control" parent="SettingsMenu/interactable" unique_id=789619654]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CheckButton" type="CheckButton" parent="SettingsMenu/interactable/Checkbox" unique_id=133520000]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 241.00003
+offset_right = 447.0
+offset_bottom = 265.00003
+scale = Vector2(1.775, 1.775)
+button_pressed = true
+
+[node name="CheckButton2" type="CheckButton" parent="SettingsMenu/interactable/Checkbox" unique_id=921208369]
+layout_mode = 0
+offset_left = 403.00003
+offset_top = 306.0
+offset_right = 447.00003
+offset_bottom = 330.0
+scale = Vector2(1.775, 1.775)
+
+[node name="CheckButton3" type="CheckButton" parent="SettingsMenu/interactable/Checkbox" unique_id=1466018335]
+layout_mode = 0
+offset_left = 403.00003
+offset_top = 476.00003
+offset_right = 447.00003
+offset_bottom = 500.00003
+scale = Vector2(1.775, 1.775)
+
+[node name="CheckButton4" type="CheckButton" parent="SettingsMenu/interactable/Checkbox" unique_id=870173238]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 581.0
+offset_right = 137.0
+offset_bottom = 605.0
+scale = Vector2(1.775, 1.775)
+
+[node name="CheckButton5" type="CheckButton" parent="SettingsMenu/interactable/Checkbox" unique_id=1738888265]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 581.0
+offset_right = 447.0
+offset_bottom = 605.0
+scale = Vector2(1.775, 1.775)
+
+[node name="Buttons" type="Control" parent="SettingsMenu/interactable" unique_id=771919681]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="SettingsMenu/interactable/Buttons" unique_id=326818934]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 786.0
+offset_right = 161.0
+offset_bottom = 829.0
+text = "Configure"
+
+[node name="Button3" type="Button" parent="SettingsMenu/interactable/Buttons" unique_id=1305174525]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 13.0
+offset_right = 77.0
+offset_bottom = 57.0
+text = "EN"
+
+[node name="Button4" type="Button" parent="SettingsMenu/interactable/Buttons" unique_id=1237389766]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 13.0
+offset_right = 143.0
+offset_bottom = 57.0
+text = "JP"
+
+[node name="Button5" type="Button" parent="SettingsMenu/interactable/Buttons" unique_id=1106570959]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 13.0
+offset_right = 578.0
+offset_bottom = 57.0
+text = "Reload previous settings"
+
+[node name="Button2" type="Button" parent="SettingsMenu/interactable/Buttons" unique_id=1332466843]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 873.0
+offset_right = 489.0
+offset_bottom = 981.0
+text = "Start"
+
+[connection signal="text_changed" from="SettingsMenu/interactable/Text/FilePath" to="SettingsMenu" method="_on_file_path_text_changed"]
+[connection signal="text_changed" from="SettingsMenu/interactable/Text/CutRange" to="SettingsMenu" method="_on_cut_range_text_changed"]
+[connection signal="text_changed" from="SettingsMenu/interactable/Text/EpisodeNumber" to="SettingsMenu" method="_on_episode_number_text_changed"]

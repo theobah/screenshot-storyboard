@@ -1,0 +1,256 @@
+[gd_scene format=3 uid="uid://c0mn6tqkjc8o2"]
+
+[ext_resource type="Script" uid="uid://ddsmeoow2yrpf" path="res://scripts/snapper_tool.gd" id="1_bu1wy"]
+
+[sub_resource type="Gradient" id="Gradient_bu1wy"]
+colors = PackedColorArray(0.23392546, 0.23392546, 0.23392543, 1, 0.5689727, 0.56897277, 0.5689727, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hyap7"]
+gradient = SubResource("Gradient_bu1wy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg0p3"]
+size = Vector2(535, 198)
+
+[node name="screenshot_window" type="Node2D" unique_id=1135680486]
+script = ExtResource("1_bu1wy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2021049322]
+position = Vector2(270.75003, 95.625)
+scale = Vector2(2.0722659, 190.75)
+texture = SubResource("GradientTexture1D_hyap7")
+
+[node name="UI_top_corner" type="Control" parent="." unique_id=1767138365]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="labels" type="Control" parent="UI_top_corner" unique_id=2123176830]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI_top_corner/labels" unique_id=242410840]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.175
+anchor_top = -0.075
+anchor_right = 5.975
+anchor_bottom = 2.625
+offset_left = 134.0
+offset_top = 3.0
+offset_right = 333.0
+offset_bottom = 129.0
+theme_override_font_sizes/normal_font_size = 14
+text = "Controls:
+exit: escape
+screenshot mode: s
+increase cut: d
+decrease cut: a
+increase panel: e
+decrease panel: q
+left click drag to select area 
+right click to cancel "
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI_top_corner/labels" unique_id=2036963148]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 86.0
+offset_bottom = 131.0
+text = "Episode 
+
+Cut 
+
+Panel "
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="UI_top_corner/labels" unique_id=996872849]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.05
+anchor_top = 0.025
+anchor_right = -3.05
+anchor_bottom = 0.025
+offset_left = 253.0
+offset_top = 2.0
+offset_right = 492.0
+offset_bottom = 67.0
+theme_override_font_sizes/normal_font_size = 18
+text = "Screenshot Assist"
+metadata/_edit_use_anchors_ = true
+
+[node name="interactable" type="Control" parent="UI_top_corner" unique_id=1178829]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ScreenshotAssist" type="CheckButton" parent="UI_top_corner/interactable" unique_id=444310210]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.05
+anchor_top = 0.025
+anchor_right = -3.05
+anchor_bottom = 0.025
+offset_left = 419.0
+offset_top = 2.0
+offset_right = 463.0
+offset_bottom = 26.0
+metadata/_edit_use_anchors_ = true
+
+[node name="EpisodeInput" type="TextEdit" parent="UI_top_corner/interactable" unique_id=183754701]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 5.0
+offset_right = 108.0
+offset_bottom = 36.0
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="CutInput" type="TextEdit" parent="UI_top_corner/interactable" unique_id=831269174]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.1
+anchor_bottom = 1.1
+offset_left = 68.0
+offset_top = 5.0
+offset_right = 108.0
+offset_bottom = 36.0
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelInput" type="TextEdit" parent="UI_top_corner/interactable" unique_id=1566031283]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 2.3
+anchor_bottom = 2.3
+offset_left = 68.0
+offset_top = 5.0
+offset_right = 108.0
+offset_bottom = 36.0
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="screenshot_assist" type="Control" parent="UI_top_corner" unique_id=1003936168]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="UI_top_corner/screenshot_assist" unique_id=1953144434]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.05
+anchor_top = 0.025
+anchor_right = -3.05
+anchor_bottom = 0.025
+offset_left = 253.0
+offset_top = 26.0
+offset_right = 492.0
+offset_bottom = 91.0
+theme_override_font_sizes/normal_font_size = 18
+text = "Lock Aspect Ratio"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="UI_top_corner/screenshot_assist" unique_id=992529363]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.225
+anchor_top = 0.025
+anchor_right = -3.225
+anchor_bottom = 0.025
+offset_left = 253.0
+offset_top = 56.0
+offset_right = 492.0
+offset_bottom = 121.0
+theme_override_font_sizes/normal_font_size = 18
+text = " Aspect Ratio"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel10" type="RichTextLabel" parent="UI_top_corner/screenshot_assist" unique_id=218036943]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.05
+anchor_top = 0.025
+anchor_right = -3.05
+anchor_bottom = 0.025
+offset_left = 253.0
+offset_top = 88.0
+offset_right = 492.0
+offset_bottom = 153.0
+theme_override_font_sizes/normal_font_size = 18
+text = "Lock snip size"
+metadata/_edit_use_anchors_ = true
+
+[node name="AspectRatio" type="TextEdit" parent="UI_top_corner/screenshot_assist" unique_id=502408847]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.05
+anchor_top = 0.025
+anchor_right = -3.05
+anchor_bottom = 0.025
+offset_left = 383.0
+offset_top = 56.0
+offset_right = 445.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 14
+text = "16:9"
+placeholder_text = "16:9"
+metadata/_edit_use_anchors_ = true
+
+[node name="LockAspectRatio" type="CheckButton" parent="UI_top_corner/screenshot_assist" unique_id=866105637]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.05
+anchor_top = 0.025
+anchor_right = -3.05
+anchor_bottom = 0.025
+offset_left = 416.0
+offset_top = 31.0
+offset_right = 460.0
+offset_bottom = 55.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfigureScreenshot" type="Button" parent="UI_top_corner/screenshot_assist" unique_id=1248161139]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.775
+anchor_top = 0.025
+anchor_right = -1.675
+anchor_bottom = 0.025
+offset_left = 297.0
+offset_top = 121.0
+offset_right = 381.0
+offset_bottom = 164.0
+text = "Press to set snip size"
+metadata/_edit_use_anchors_ = true
+
+[node name="LockSnipSize" type="CheckButton" parent="UI_top_corner/screenshot_assist" unique_id=89441014]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.504545
+anchor_top = 1.2333333
+anchor_right = -12.504545
+anchor_bottom = 1.2333333
+offset_left = 794.1818
+offset_top = 42.666664
+offset_right = 838.1818
+offset_bottom = 66.666664
+metadata/_edit_use_anchors_ = true
+
+[node name="UIArea" type="Area2D" parent="UI_top_corner" unique_id=1177762633]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI_top_corner/UIArea" unique_id=2140812422]
+position = Vector2(265.5, 95)
+shape = SubResource("RectangleShape2D_eg0p3")
+
+[connection signal="mouse_entered" from="UI_top_corner" to="." method="_on_ui_top_corner_mouse_entered"]
+[connection signal="mouse_exited" from="UI_top_corner" to="." method="_on_ui_top_corner_mouse_exited"]
+[connection signal="toggled" from="UI_top_corner/interactable/ScreenshotAssist" to="." method="_on_screenshot_assist_toggled"]
+[connection signal="text_changed" from="UI_top_corner/screenshot_assist/AspectRatio" to="." method="_on_aspect_ratio_text_changed"]
+[connection signal="toggled" from="UI_top_corner/screenshot_assist/LockAspectRatio" to="." method="_on_lock_aspect_ratio_toggled"]
+[connection signal="pressed" from="UI_top_corner/screenshot_assist/ConfigureScreenshot" to="." method="_on_configure_screenshot_pressed"]
+[connection signal="toggled" from="UI_top_corner/screenshot_assist/LockSnipSize" to="." method="_on_lock_snip_size_toggled"]
