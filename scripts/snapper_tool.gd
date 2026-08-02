@@ -270,7 +270,7 @@ func capture_screenshot():
 
 	
 	# Take screenshot of the selected area
-	panel +=1
+	
 	var image = DisplayServer.screen_get_image(0)
 
 	var crop_rect = Rect2i(
@@ -300,7 +300,7 @@ func capture_screenshot():
 
 	$UI_top_corner/labels/print_menu.text = "Screenshot saved to: %s" % path
 	print("Screenshot saved to: %s" % path)
-
+	panel +=1
 
 var settings_dic = {}
 
