@@ -294,7 +294,7 @@ func capture_screenshot():
 	if cut_folder_toggle:
 		path = file_path + "/" + "c" +  str(_calculate_cut_range()) + "/%s.png" % _name_capture()
 	else:
-		path = file_path + "/" + "c" + "/%s.png" % _name_capture()
+		path = file_path + "/%s.png" % _name_capture()
 	cropped.save_png(path)
 	
 
