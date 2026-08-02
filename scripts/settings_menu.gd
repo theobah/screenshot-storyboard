@@ -21,6 +21,7 @@ func _ready() -> void:
 	else:
 		_save("all", "all")
 	
+	
 	get_window().set_transparent_background(false)
 	get_window().borderless = false
 	get_window().always_on_top = true
@@ -39,26 +40,26 @@ func _ready() -> void:
 	
 	
 
-func _on_file_path_text_changed() -> void:
-	file_path = $interactable/Text/FilePath.get_text()
+func _on_file_path_text_changed(new_text: String) -> void:
+	file_path = new_text
 	_save("file_path", file_path)
-
-func _on_cut_range_text_changed() -> void:
-	cut_range = $interactable/Text/CutRange.get_text()
-	cut_range.replace(" ", "")
-	_save("cut_range", cut_range)
+	_authenticate_settings()
+	
 	
 
-
-func _on_episode_number_text_changed() -> void:
-	episode_number = int($interactable/Text/EpisodeNumber.get_text())
+func _on_cut_range_text_changed(new_text: String) -> void:
+	cut_range = new_text
+	cut_range.replace(" ", "")
+	_save("cut_range", cut_range)
+	print(cut_range)
+	
+func _on_episode_number_text_changed(new_text: String) -> void:
+	episode_number = int(new_text)
 	_save("episode_number", episode_number)
 	
 func _on_cut_folder_toggle_toggled(toggled_on: bool) -> void:
 	cut_folder_toggle = toggled_on
 	_save("cut_folder_toggle", cut_folder_toggle)
-
-
 
 
 func _on_cut_range_toggle_toggled(toggled_on: bool) -> void:
@@ -131,17 +132,25 @@ func _load():
 		print("no data saved")
 		
 func _on_start_pressed() -> void:
-	
+	authenticated= true
 	#DirAccess.make_dir_recursive_absolute(file_path)
 	_process_cuts()
 	
-	
-	authenticated = true
 	if authenticated == true:
 		get_tree().change_scene_to_file("res://scenes/Screenshot.tscn")
 		
+func _authenticate_settings():
+	print(file_path)
+	if DirAccess.dir_exists_absolute(file_path.strip_edges()) and file_path != "":
+		authenticated = true
+		$interactable/Buttons/Start.disabled = false
+		$interactable/Buttons/Start.text = "Start"
+	else:
+		authenticated = false
+		$interactable/Buttons/Start.disabled = true
+		$interactable/Buttons/Start.text = "Input valid file path to start"
 		
-		
+	pass
 var cut_list = []
 func _process_cuts():
 	

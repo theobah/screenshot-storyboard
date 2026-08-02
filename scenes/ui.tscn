@@ -146,7 +146,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="FilePath" type="TextEdit" parent="SettingsMenu/interactable/Text" unique_id=1091944591]
+[node name="FilePath" type="LineEdit" parent="SettingsMenu/interactable/Text" unique_id=1983460816]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 138.0
@@ -154,22 +154,22 @@ offset_right = 583.0
 offset_bottom = 186.0
 placeholder_text = "e.g. Document/anime_name/storyboard_cuts/episode1"
 
-[node name="CutRange" type="TextEdit" parent="SettingsMenu/interactable/Text" unique_id=446395611]
+[node name="CutRange" type="LineEdit" parent="SettingsMenu/interactable/Text" unique_id=623581675]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 435.0
-offset_right = 578.0
+offset_right = 583.0
 offset_bottom = 483.0
 placeholder_text = "e.g. 1-5, 2-10, 13, 101-150"
 editable = false
-deselect_on_focus_loss_enabled = false
 
-[node name="EpisodeNumber" type="TextEdit" parent="SettingsMenu/interactable/Text" unique_id=1195414968]
+[node name="EpisodeNumber" type="LineEdit" parent="SettingsMenu/interactable/Text" unique_id=1896607365]
 layout_mode = 0
 offset_left = 420.0
 offset_top = 201.0
 offset_right = 481.0
 offset_bottom = 247.0
+theme_override_constants/minimum_character_width = 2
 placeholder_text = "e.g. 1"
 
 [node name="Checkbox" type="Control" parent="SettingsMenu/interactable" unique_id=789619654]
