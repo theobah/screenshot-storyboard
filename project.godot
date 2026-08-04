@@ -67,4 +67,5 @@ panel_num_down={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
 viewport/transparent_background=true
