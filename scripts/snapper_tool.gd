@@ -78,7 +78,7 @@ func _input(event):
 	else:
 		is_hovering_ui = false
 		
-	if event is InputEventMouseButton and not is_hovering_ui:
+	if event is InputEventMouseButton and not is_hovering_ui and is_taking_screenshot:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				is_selecting = true
@@ -369,7 +369,9 @@ func _calculate_cut_range():
 
 
 func _on_panel_input_text_changed(new_text: String) -> void:
-	episode_number = new_text
+	panel = int(new_text)
+	_save("panel", panel)
+	
 
 
 func _on_cut_input_text_changed(new_text: String) -> void:
@@ -378,9 +380,8 @@ func _on_cut_input_text_changed(new_text: String) -> void:
 	cut_number = int(cut_list.find(cut))
 
 func _on_episode_input_text_changed(new_text: String) -> void:
-	panel = int(new_text)
 	_save("panel", panel)
-
+	episode_number = new_text
 
 
 	

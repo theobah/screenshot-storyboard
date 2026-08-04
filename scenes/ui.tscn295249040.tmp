@@ -91,15 +91,6 @@ offset_bottom = 581.0
 theme_override_font_sizes/normal_font_size = 24
 text = "Continue from last sceenshotted cut?"
 
-[node name="RichTextLabel8" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=408643869]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 797.0
-offset_right = 636.0
-offset_bottom = 877.0
-theme_override_font_sizes/normal_font_size = 24
-text = "Click when ready to start screenshotting"
-
 [node name="RichTextLabel7" type="RichTextLabel" parent="SettingsMenu/labels" unique_id=679429845]
 visible = false
 layout_mode = 0
@@ -304,7 +295,6 @@ offset_left = 93.0
 offset_top = 851.0
 offset_right = 489.0
 offset_bottom = 959.0
-theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_font_sizes/font_size = 19
 theme_override_styles/normal = SubResource("StyleBoxFlat_nt7q6")
 text = "Start"

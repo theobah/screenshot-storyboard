@@ -21,7 +21,7 @@ func _ready() -> void:
 	else:
 		_save("all", "all")
 	
-	
+	_authenticate_settings()
 	get_window().set_transparent_background(false)
 	get_window().borderless = false
 	get_window().always_on_top = true
@@ -52,10 +52,16 @@ func _on_cut_range_text_changed(new_text: String) -> void:
 	cut_range.replace(" ", "")
 	_save("cut_range", cut_range)
 	print(cut_range)
+	_authenticate_settings()
 	
 func _on_episode_number_text_changed(new_text: String) -> void:
-	episode_number = int(new_text)
+	if int(new_text) != 0:
+		episode_number = int(new_text)
+	else:
+		episode_number = ""
+	_authenticate_settings()
 	_save("episode_number", episode_number)
+	
 	
 func _on_cut_folder_toggle_toggled(toggled_on: bool) -> void:
 	cut_folder_toggle = toggled_on
@@ -69,6 +75,7 @@ func _on_cut_range_toggle_toggled(toggled_on: bool) -> void:
 	else:
 		$interactable/Text/CutRange.editable = true
 	_save("cut_range_toggle", cut_range_toggle)
+	_authenticate_settings()
 
 func _on_from_last_toggle_toggled(toggled_on: bool) -> void:
 	from_last_toggle = toggled_on
@@ -140,15 +147,36 @@ func _on_start_pressed() -> void:
 		get_tree().change_scene_to_file("res://scenes/Screenshot.tscn")
 		
 func _authenticate_settings():
-	print(file_path)
-	if DirAccess.dir_exists_absolute(file_path.strip_edges()) and file_path != "":
-		authenticated = true
-		$interactable/Buttons/Start.disabled = false
-		$interactable/Buttons/Start.text = "Start"
+	var color: Color = Color.WHITE
+	if DirAccess.dir_exists_absolute(file_path.strip_edges()) and file_path != "" and str(episode_number) != "":
+		print(cut_range)
+		print(cut_range_toggle)
+		if cut_range != "" or cut_range_toggle == false:
+			authenticated = true
+			$interactable/Buttons/Start.disabled = false
+			$interactable/Buttons/Start.text = "Start"
+			color = Color.WHITE
+		else:
+			authenticated = false
+			$interactable/Buttons/Start.disabled = true
+			$interactable/Buttons/Start.text = "Input custom cut range"
+			color = Color.RED
+			
+			
+	elif DirAccess.dir_exists_absolute(file_path.strip_edges()) and file_path != "" and str(episode_number) == "":
+		authenticated = false
+		$interactable/Buttons/Start.disabled = true
+		$interactable/Buttons/Start.text = "Input episode number to start"
+		color = Color.RED
+		
 	else:
 		authenticated = false
 		$interactable/Buttons/Start.disabled = true
 		$interactable/Buttons/Start.text = "Input valid file path to start"
+		color = Color.RED
+		
+	$interactable/Buttons/Start.add_theme_color_override("font_color", color)
+		
 		
 	pass
 var cut_list = []

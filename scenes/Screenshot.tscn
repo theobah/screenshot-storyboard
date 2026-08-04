@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://c0mn6tqkjc8o2"]
 
 [ext_resource type="Script" uid="uid://ddsmeoow2yrpf" path="res://scripts/snapper_tool.gd" id="1_bu1wy"]
+[ext_resource type="Script" uid="uid://fn81j2j52uvr" path="res://scenes/check_focus.gd" id="2_ka6kq"]
 
 [sub_resource type="Gradient" id="Gradient_bu1wy"]
 colors = PackedColorArray(0.23392546, 0.23392546, 0.23392543, 1, 0.5689727, 0.56897277, 0.5689727, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_hyap7"]
 gradient = SubResource("Gradient_bu1wy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ka6kq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.37109375, 0.37109375, 0.37109375, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eg0p3"]
 size = Vector2(535, 198)
@@ -15,8 +28,8 @@ size = Vector2(535, 198)
 script = ExtResource("1_bu1wy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2021049322]
-position = Vector2(284.74997, 114.12499)
-scale = Vector2(2.1816404, 227.74998)
+position = Vector2(364.25, 114.12499)
+scale = Vector2(2.8027344, 227.74998)
 texture = SubResource("GradientTexture1D_hyap7")
 
 [node name="UI_top_corner" type="Control" parent="." unique_id=1767138365]
@@ -88,12 +101,30 @@ theme_override_font_sizes/normal_font_size = 18
 text = "Screenshot Assist"
 metadata/_edit_use_anchors_ = true
 
+[node name="RichTextLabel8" type="RichTextLabel" parent="UI_top_corner/labels" unique_id=112109302]
+custom_maximum_size = Vector2(120.29, 66.435)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 10.8
+anchor_top = 4.05
+anchor_right = 7.975
+anchor_bottom = 4.05
+offset_left = 253.0
+offset_top = 2.0
+offset_right = 486.0
+offset_bottom = 67.0
+theme_override_font_sizes/normal_font_size = 12
+text = "(Program must be in focus to take screenshots)"
+scroll_active = false
+autowrap_trim_flags = 0
+metadata/_edit_use_anchors_ = true
+
 [node name="print_menu" type="Label" parent="UI_top_corner/labels" unique_id=162202853]
-custom_maximum_size = Vector2(500, 46.51)
+custom_maximum_size = Vector2(530, 46.51)
 layout_mode = 0
 offset_left = 6.0
 offset_top = 183.0
-offset_right = 506.0
+offset_right = 510.155
 offset_bottom = 229.51
 theme_override_colors/font_color = Color(0.29451165, 0.79152083, 7.70092e-07, 1)
 theme_override_font_sizes/font_size = 14
@@ -121,33 +152,51 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PanelInput" type="LineEdit" parent="UI_top_corner/interactable" unique_id=2142184163]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 116.0
-offset_right = 122.8125
-offset_bottom = 152.0
+offset_left = 87.0
+offset_top = 111.0
+offset_right = 132.8125
+offset_bottom = 147.0
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 20
 text = "1"
 
 [node name="CutInput" type="LineEdit" parent="UI_top_corner/interactable" unique_id=886525498]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 61.0
-offset_right = 122.8125
-offset_bottom = 97.0
+offset_left = 87.0
+offset_top = 56.0
+offset_right = 132.8125
+offset_bottom = 92.0
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 20
 text = "1"
 
 [node name="EpisodeInput" type="LineEdit" parent="UI_top_corner/interactable" unique_id=824899058]
 layout_mode = 0
-offset_left = 77.0
+offset_left = 87.0
 offset_top = 3.0
-offset_right = 115.25
-offset_bottom = 34.0
+offset_right = 132.8125
+offset_bottom = 39.0
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 20
 text = "1"
+
+[node name="Refocus" type="Button" parent="UI_top_corner/interactable" unique_id=1692343421]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.7
+anchor_top = -2.95
+anchor_right = 8.25
+offset_left = 297.0
+offset_top = 121.0
+offset_right = 381.0
+offset_bottom = 164.0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_ka6kq")
+disabled = true
+text = "Window in 
+focus"
+script = ExtResource("2_ka6kq")
+metadata/_edit_use_anchors_ = true
 
 [node name="screenshot_assist" type="Control" parent="UI_top_corner" unique_id=1003936168]
 anchors_preset = 0
@@ -241,10 +290,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AspectRatio" type="LineEdit" parent="UI_top_corner/screenshot_assist" unique_id=755404665]
 layout_mode = 0
-offset_left = 305.0
-offset_top = 61.0
-offset_right = 355.0
-offset_bottom = 97.0
+offset_left = 304.0
+offset_top = 56.0
+offset_right = 354.0
+offset_bottom = 92.0
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 20
 text = "16:9"
