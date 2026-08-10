@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://fn81j2j52uvr" path="res://scenes/check_focus.gd" id="2_ka6kq"]
 
 [sub_resource type="Gradient" id="Gradient_bu1wy"]
-colors = PackedColorArray(0.23392546, 0.23392546, 0.23392543, 1, 0.5689727, 0.56897277, 0.5689727, 1)
+colors = PackedColorArray(0.16078432, 0.27058825, 0.3137255, 1, 0.42352942, 0.5529412, 0.5176471, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_hyap7"]
 gradient = SubResource("Gradient_bu1wy")
@@ -37,15 +37,19 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_horizontal = 2
+
+[node name="labels en" type="Control" parent="UI_top_corner" unique_id=2123176830]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="labels" type="Control" parent="UI_top_corner" unique_id=2123176830]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI_top_corner/labels" unique_id=242410840]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI_top_corner/labels en" unique_id=242410840]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 6.075
@@ -58,17 +62,17 @@ offset_right = 333.0
 offset_bottom = 129.0
 theme_override_font_sizes/normal_font_size = 14
 text = "Controls:
-exit: escape
-screenshot mode: s
-increase cut: d
-decrease cut: a
-increase panel: e
-decrease panel: q
+exit: Esc
+screenshot mode: S
+increase cut: D
+decrease cut: A
+increase panel: E
+decrease panel: Q
 left click drag to select area 
 right click to cancel "
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="UI_top_corner/labels" unique_id=2036963148]
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI_top_corner/labels en" unique_id=2036963148]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.15
@@ -86,7 +90,7 @@ Cut
 Panel "
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel7" type="RichTextLabel" parent="UI_top_corner/labels" unique_id=996872849]
+[node name="RichTextLabel7" type="RichTextLabel" parent="UI_top_corner/labels en" unique_id=996872849]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -2.625
@@ -96,30 +100,117 @@ anchor_bottom = 0.025
 offset_left = 253.0
 offset_top = 2.0
 offset_right = 492.0
-offset_bottom = 67.0
+offset_bottom = 31.0
 theme_override_font_sizes/normal_font_size = 18
 text = "Screenshot Assist"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel8" type="RichTextLabel" parent="UI_top_corner/labels" unique_id=112109302]
+[node name="RichTextLabel8" type="RichTextLabel" parent="UI_top_corner/labels en" unique_id=112109302]
 custom_maximum_size = Vector2(120.29, 66.435)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 7.975
-anchor_top = 4.05
-anchor_right = 7.975
-anchor_bottom = 4.05
-offset_left = 253.0
-offset_top = 2.0
-offset_right = 486.0
-offset_bottom = 67.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 556.0
+offset_top = 144.0
+offset_right = 676.29
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 12
 text = "(Program must be in focus to take screenshots)"
 scroll_active = false
 autowrap_trim_flags = 0
+
+[node name="print_menu" type="Label" parent="UI_top_corner/labels en" unique_id=162202853]
+custom_maximum_size = Vector2(530, 46.51)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 183.0
+offset_right = 510.155
+offset_bottom = 229.51
+theme_override_colors/font_color = Color(0.29451165, 0.79152083, 7.70092e-07, 1)
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 1
+max_lines_visible = 2
+
+[node name="labels jp" type="Control" parent="UI_top_corner" unique_id=179144851]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="print_menu" type="Label" parent="UI_top_corner/labels" unique_id=162202853]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI_top_corner/labels jp" unique_id=2113170488]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.025
+anchor_top = -0.075
+anchor_right = 6.025
+anchor_bottom = 2.075
+offset_left = 134.0
+offset_top = 3.0
+offset_right = 333.0
+offset_bottom = 129.0
+theme_override_font_sizes/normal_font_size = 13
+text = "操作
+終了：Esc
+スクリーンショットモード：S
+カットを進める：D
+カットを戻す：A
+コマを進める：E
+コマを戻す：Q
+左クリックでドラッグして範囲を選択
+右クリックでキャンセル"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI_top_corner/labels jp" unique_id=949739188]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.15
+anchor_right = 0.425
+anchor_bottom = 1.575
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 86.0
+offset_bottom = 131.0
+theme_override_font_sizes/normal_font_size = 18
+text = "話数
+
+カット
+
+コマ"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="UI_top_corner/labels jp" unique_id=163135569]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.725
+anchor_top = 0.025
+anchor_right = -2.725
+anchor_bottom = 0.075
+offset_left = 253.0
+offset_top = 2.0
+offset_right = 451.0
+offset_bottom = 36.0
+theme_override_font_sizes/normal_font_size = 14
+text = "スクリーンショットアシスト"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="UI_top_corner/labels jp" unique_id=1325929464]
+custom_maximum_size = Vector2(120.29, 66.435)
+layout_mode = 1
+offset_left = 576.0
+offset_top = 164.0
+offset_right = 696.29
+offset_bottom = 229.0
+theme_override_font_sizes/normal_font_size = 12
+text = "（スクリーンショット撮影にはフォーカスが必要です）"
+scroll_active = false
+autowrap_trim_flags = 0
+
+[node name="print_menu" type="Label" parent="UI_top_corner/labels jp" unique_id=660655373]
 custom_maximum_size = Vector2(530, 46.51)
 layout_mode = 0
 offset_left = 6.0
@@ -183,9 +274,9 @@ text = "1"
 [node name="Refocus" type="Button" parent="UI_top_corner/interactable" unique_id=1692343421]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 6.7
+anchor_left = 6.875
 anchor_top = -2.95
-anchor_right = 8.25
+anchor_right = 8.425
 offset_left = 297.0
 offset_top = 121.0
 offset_right = 381.0
@@ -203,22 +294,84 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="RichTextLabel9" type="RichTextLabel" parent="UI_top_corner/screenshot_assist" unique_id=1953144434]
+[node name="label en" type="Control" parent="UI_top_corner/screenshot_assist" unique_id=1036469819]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel11" type="RichTextLabel" parent="UI_top_corner/screenshot_assist/label en" unique_id=1791438779]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.6
+anchor_right = 0.1
+anchor_bottom = 0.6
+offset_left = 144.0
+offset_top = 3.0
+offset_right = 383.0
+offset_bottom = 32.0
+theme_override_font_sizes/normal_font_size = 18
+text = "Lock aspect ratio"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel12" type="RichTextLabel" parent="UI_top_corner/screenshot_assist/label en" unique_id=538098636]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -2.625
-anchor_top = 0.15
+anchor_top = 0.125
 anchor_right = -2.625
-anchor_bottom = 0.15
+anchor_bottom = 0.125
+offset_left = 253.0
+offset_top = 56.0
+offset_right = 492.0
+offset_bottom = 92.0
+theme_override_font_sizes/normal_font_size = 18
+text = "Aspect ratio"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel13" type="RichTextLabel" parent="UI_top_corner/screenshot_assist/label en" unique_id=909997582]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.625
+anchor_top = 0.225
+anchor_right = -2.625
+anchor_bottom = 0.225
+offset_left = 253.0
+offset_top = 88.0
+offset_right = 492.0
+offset_bottom = 115.0
+theme_override_font_sizes/normal_font_size = 18
+text = "Fix screenshot size"
+metadata/_edit_use_anchors_ = true
+
+[node name="label jp" type="Control" parent="UI_top_corner/screenshot_assist" unique_id=1082849512]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -17.0
+offset_right = -109.0
+offset_bottom = -17.0
+grow_vertical = 2
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="UI_top_corner/screenshot_assist/label jp" unique_id=1953144434]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.625
+anchor_top = 0.025
+anchor_right = -2.625
+anchor_bottom = 0.025
 offset_left = 253.0
 offset_top = 26.0
 offset_right = 492.0
 offset_bottom = 91.0
 theme_override_font_sizes/normal_font_size = 18
-text = "Lock Aspect Ratio"
+text = "アスペクト比を固定"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel8" type="RichTextLabel" parent="UI_top_corner/screenshot_assist" unique_id=992529363]
+[node name="RichTextLabel8" type="RichTextLabel" parent="UI_top_corner/screenshot_assist/label jp" unique_id=992529363]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -2.625
@@ -230,30 +383,31 @@ offset_top = 56.0
 offset_right = 492.0
 offset_bottom = 121.0
 theme_override_font_sizes/normal_font_size = 18
-text = "Aspect Ratio"
+text = "アスペクト比"
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel10" type="RichTextLabel" parent="UI_top_corner/screenshot_assist" unique_id=218036943]
+[node name="RichTextLabel10" type="RichTextLabel" parent="UI_top_corner/screenshot_assist/label jp" unique_id=218036943]
+custom_maximum_size = Vector2(164.765, -1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -2.625
-anchor_top = 0.1
-anchor_right = -2.625
-anchor_bottom = 0.1
+anchor_left = -2.7558746
+anchor_top = 0.15
+anchor_right = -2.7558746
+anchor_bottom = 0.15
 offset_left = 253.0
 offset_top = 88.0
 offset_right = 492.0
 offset_bottom = 153.0
 theme_override_font_sizes/normal_font_size = 18
-text = "Lock snip size"
+text = "スクリーンショットサイズを固定"
 metadata/_edit_use_anchors_ = true
 
 [node name="LockAspectRatio" type="CheckButton" parent="UI_top_corner/screenshot_assist" unique_id=866105637]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -2.45
+anchor_left = -2.375
 anchor_top = 0.025
-anchor_right = -2.45
+anchor_right = -2.375
 anchor_bottom = 0.025
 offset_left = 416.0
 offset_top = 31.0
@@ -264,23 +418,25 @@ metadata/_edit_use_anchors_ = true
 [node name="ConfigureScreenshot" type="Button" parent="UI_top_corner/screenshot_assist" unique_id=1248161139]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -3.725
-anchor_right = -1.625
+anchor_left = -3.825
+anchor_top = 0.475
+anchor_right = -1.25
+anchor_bottom = 0.475
 offset_left = 297.0
 offset_top = 121.0
 offset_right = 381.0
 offset_bottom = 164.0
 theme_override_colors/icon_pressed_color = Color(0.121368505, 0.57756215, 1.92523e-07, 1)
 theme_override_font_sizes/font_size = 18
-text = "Press to set snip size"
+text = "Set Snip Size"
 metadata/_edit_use_anchors_ = true
 
 [node name="LockSnipSize" type="CheckButton" parent="UI_top_corner/screenshot_assist" unique_id=89441014]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -11.904546
+anchor_left = -11.829546
 anchor_top = 1.3583333
-anchor_right = -11.904546
+anchor_right = -11.829546
 anchor_bottom = 1.3583333
 offset_left = 794.1818
 offset_top = 42.666664
@@ -290,9 +446,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AspectRatio" type="LineEdit" parent="UI_top_corner/screenshot_assist" unique_id=755404665]
 layout_mode = 0
-offset_left = 304.0
+offset_left = 309.0
 offset_top = 56.0
-offset_right = 354.0
+offset_right = 359.0
 offset_bottom = 92.0
 theme_override_constants/minimum_character_width = 2
 theme_override_font_sizes/font_size = 20

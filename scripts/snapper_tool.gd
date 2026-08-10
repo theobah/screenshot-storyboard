@@ -17,6 +17,7 @@ var cut_range_toggle : bool = 0
 var from_last_toggle : bool = 0
 var cut_list = []
 var cut_range_list = []
+var cut_folder_individual_toggle: bool = false
 
 var cut = 1
 var panel = 1
@@ -41,9 +42,10 @@ var aspect_ratio = Vector2i(16,9)
 var default_size = Vector2.ZERO
 
 var save_setting_path = "user://settings.save"
+var lang = "jp"
 
 func _ready():
-	
+
 	$UI_top_corner/screenshot_assist.hide()
 	_on_aspect_ratio_text_changed("16:9")
 	DisplayServer.window_set_mouse_passthrough(interactive_polygon)
@@ -60,7 +62,21 @@ func _ready():
 	if cut_range_toggle and not from_last_toggle:
 		cut = cut_list[0]
 		_update_UI()
-	
+	print("lang is" + lang)
+	if lang == "jp":
+		$"UI_top_corner/labels jp".show()
+		$"UI_top_corner/labels en".hide()
+		$"UI_top_corner/screenshot_assist/label en".hide()
+		$"UI_top_corner/screenshot_assist/label jp".show()
+		$UI_top_corner/screenshot_assist/ConfigureScreenshot.text = "サイズを設定"
+		
+		
+	else:
+		$"UI_top_corner/labels jp".hide()
+		$"UI_top_corner/labels en".show()
+		$"UI_top_corner/screenshot_assist/label en".show()
+		$"UI_top_corner/screenshot_assist/label jp".hide()
+		$UI_top_corner/screenshot_assist/ConfigureScreenshot.text = "Set Snip Size"
 func _screenshot_mode():
 	toggle_bk_draw = true
 
@@ -92,23 +108,24 @@ func _input(event):
 					
 					default_size_configure = false
 					is_taking_screenshot = false
-					
+					selec_rec = Rect2(0,0,0,0)
 					
 				else:
 					hide_hud = true
 					queue_redraw()
 					print("hide_hud")
 					is_selecting = false
-					await get_tree().create_timer(0.2).timeout
+					await get_tree().create_timer(0.1).timeout
 					
 					capture_screenshot()
-					
+					selec_rec = Rect2(0,0,0,0)
 					_update_UI()
 					hide_hud = false
 					
 					queue_redraw()
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			if event.pressed:
+				selec_rec = Rect2(0,0,0,0)
 				if is_selecting == true:
 					is_selecting = false
 					queue_redraw()
@@ -121,24 +138,25 @@ func _input(event):
 		_screenshot_mode()
 		
 	elif event.is_action_pressed("cut_num_up") and int(cut_number)+1 < int(cut_list.size()):
-		_save("cut", cut)
 		cut_number +=1
 		cut = cut_list[cut_number]
 		panel =1
+		_save("cut", cut)
+		_save("panel", panel)
 		_update_UI()
 	elif event.is_action_pressed("cut_num_down") and cut_number >0:
-		_save("cut", cut)
 		cut_number -=1
 		cut = cut_list[cut_number]
-		panel =1
+		_save("cut", cut)
 		_update_UI()
 	elif event.is_action_pressed("panel_num_up"):
-		_save("panel", panel)
 		panel+=1
+		_save("panel", panel)
 		_update_UI()
 	elif event.is_action_pressed("panel_num_down") and panel >1:
-		_save("panel", panel)
 		panel-=1
+		_save("panel", panel)
+		
 		_update_UI()
 	elif event is InputEventKey and event.pressed:
 		if event.keycode == KEY_ESCAPE:
@@ -147,11 +165,12 @@ func _input(event):
 	
 
 func _draw():
+	
 	var size = get_viewport().size
-	if is_taking_screenshot and not hide_hud:
+	if is_taking_screenshot and not hide_hud and not is_selecting:
 		draw_rect(Rect2(0, 0, get_window().size.x, get_window().size.y), Color(0, 0, 0, 0.5))
 	else:
-		draw_rect(Rect2(0, 0, get_window().size.x, get_window().size.y), Color(0, 0, 0, 0))
+		pass
 	if is_taking_screenshot and toggle_bk_draw:
 
 		_pack_vectors(0,size.x,0,size.y)
@@ -173,7 +192,9 @@ func _draw():
 			var height = default_size.y
 		
 			selec_rec = Rect2(x,y,width,height)
-		
+			
+
+				
 		elif is_selecting and default_size_configure:
 			
 			var x = minf(start_pos.x, current_pos.x)
@@ -213,7 +234,30 @@ func _draw():
 			selec_rec.position + selec_rec.size,
 			selec_rec.position + Vector2(0, selec_rec.size.y)
 		]
-	
+		var r := Rect2(selec_rec).abs()
+		draw_rect(
+		Rect2(0, 0, size.x, r.position.y),
+		Color(0, 0, 0, 0.5)
+		)
+
+		draw_rect(
+			Rect2(0, r.end.y, size.x, size.y - r.end.y),
+			Color(0, 0, 0, 0.5)
+		)
+
+		draw_rect(
+			Rect2(r.position.x, r.position.y, r.size.x, 0),
+			Color(0, 0, 0, 0)
+		)
+
+		draw_rect(
+			Rect2(0, r.position.y, r.position.x, r.size.y),
+			Color(0, 0, 0, 0.5)
+		)
+
+		draw_rect(
+			Rect2(r.end.x, r.position.y, size.x - r.end.x, r.size.y),
+			Color(0, 0, 0, 0.5))
 		for corner in corners:
 			if not hide_hud:
 				draw_rect(Rect2(corner - Vector2(handle_size/2, handle_size/2), Vector2(handle_size, handle_size)), Color.WHITE)
@@ -291,14 +335,24 @@ func capture_screenshot():
 		Vector2i.ZERO
 	)
 	var path = ""
-	if cut_folder_toggle:
+	if cut_folder_toggle and cut_range_toggle and not cut_folder_individual_toggle:
 		path = file_path + "/" + "c" +  str(_calculate_cut_range()) + "/%s.png" % _name_capture()
+	elif cut_folder_toggle and cut_range_toggle and cut_folder_individual_toggle:
+		path = file_path + "/" + "c" +  str(cut).pad_zeros(3) + "/%s.png" % _name_capture()
+	elif cut_folder_toggle and not cut_range_toggle:
+		var dir = DirAccess.open(file_path)
+		
+		dir.make_dir("c" + str(cut).pad_zeros(3))
+		
+		path = file_path + "/" + "c" +  str(cut).pad_zeros(3) + "/%s.png" % _name_capture()
 	else:
 		path = file_path + "/%s.png" % _name_capture()
 	cropped.save_png(path)
 	
-
-	$UI_top_corner/labels/print_menu.text = "Screenshot saved to: %s" % path
+	if lang == "en":
+		$"UI_top_corner/labels en/print_menu".text = "Screenshot saved to: %s" % path
+	else:
+		$"UI_top_corner/labels jp/print_menu".text = "スクリーンショットを保存しました： %s" % path
 	print("Screenshot saved to: %s" % path)
 	panel +=1
 
@@ -316,6 +370,9 @@ func _load():
 		cut_folder_toggle = settings_dic.get("cut_folder_toggle")
 		cut_range_toggle =  settings_dic.get("cut_range_toggle")
 		from_last_toggle = settings_dic.get("from_last_toggle")
+		lang = settings_dic.get("lang")
+		cut_folder_individual_toggle = settings_dic.get("cut_folder_individual_toggle")
+		
 		
 		if cut_range_toggle:
 			cut_list = settings_dic.get("cut_list")
@@ -380,7 +437,7 @@ func _on_cut_input_text_changed(new_text: String) -> void:
 	cut_number = int(cut_list.find(cut))
 
 func _on_episode_input_text_changed(new_text: String) -> void:
-	_save("panel", panel)
+	_save("episode_number", episode_number)
 	episode_number = new_text
 
 
