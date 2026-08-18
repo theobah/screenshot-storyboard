@@ -423,7 +423,7 @@ func _calculate_cut_range():
 			if i[0] == cut:
 				return  str(cut_range_list[count][0]).pad_zeros(3)
 			else:
-				count+=1
+				count+=1 
 
 
 func _on_panel_input_text_changed(new_text: String) -> void:
