@@ -242,7 +242,7 @@ func _process_cuts():
 				if i not in cut_list:
 					cut_list.append(i)
 
-		else:
+		elif cut_folder_toggle:
 			dir.make_dir("c" + str(int(part)).pad_zeros(3))
 			if int(part) not in cut_list:
 				cut_range_list.append([int(part)])

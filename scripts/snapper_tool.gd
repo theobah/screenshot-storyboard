@@ -260,7 +260,8 @@ func _draw():
 			Color(0, 0, 0, 0.5))
 		for corner in corners:
 			if not hide_hud:
-				draw_rect(Rect2(corner - Vector2(handle_size/2, handle_size/2), Vector2(handle_size, handle_size)), Color.WHITE)
+				pass
+				#draw_rect(Rect2(corner - Vector2(handle_size/2, handle_size/2), Vector2(handle_size, handle_size)), Color.WHITE)
 			
 func _pack_vectors(x,x1,y,y1):
 	interactive_polygon = PackedVector2Array([

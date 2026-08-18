@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bma8dohyd7rkq"]
 
 [ext_resource type="Script" uid="uid://bhifoi7q7f85p" path="res://scripts/settings_menu.gd" id="1_nt7q6"]
+[ext_resource type="Texture2D" uid="uid://64tlmdu0xsby" path="res://art/Darukoma_3c.png" id="2_x4jx1"]
 
 [sub_resource type="Gradient" id="Gradient_x4jx1"]
 colors = PackedColorArray(0.16186923, 0.26993173, 0.31256697, 1, 0.42305914, 0.5542208, 0.51834345, 1)
@@ -39,60 +40,69 @@ corner_detail = 5
 [node name="SettingsMenu" type="CanvasLayer" parent="." unique_id=1014932951]
 script = ExtResource("1_nt7q6")
 
-[node name="background" type="Sprite2D" parent="SettingsMenu" unique_id=30145489]
+[node name="Shapes" type="Node2D" parent="SettingsMenu" unique_id=702407026]
+
+[node name="background" type="Sprite2D" parent="SettingsMenu/Shapes" unique_id=30145489]
 position = Vector2(299.14362, 502.2288)
 rotation = -1.5707964
 scale = Vector2(3.954912, 602.062)
 texture = SubResource("GradientTexture1D_eg0p3")
 
-[node name="background2" type="Sprite2D" parent="SettingsMenu" unique_id=64401323]
+[node name="background2" type="Sprite2D" parent="SettingsMenu/Shapes" unique_id=64401323]
 position = Vector2(293.27277, 196.07126)
 rotation = -1.5707964
 scale = Vector2(0.014914762, 634.5693)
 texture = SubResource("GradientTexture1D_x4jx1")
 
-[node name="background4" type="Sprite2D" parent="SettingsMenu" unique_id=125195844]
+[node name="background4" type="Sprite2D" parent="SettingsMenu/Shapes" unique_id=125195844]
 position = Vector2(292, 263)
 rotation = -1.5707964
 scale = Vector2(0.014914762, 634.5693)
 texture = SubResource("GradientTexture1D_x4jx1")
 
-[node name="background5" type="Sprite2D" parent="SettingsMenu" unique_id=1443637876]
+[node name="background5" type="Sprite2D" parent="SettingsMenu/Shapes" unique_id=1443637876]
 position = Vector2(293, 313)
 rotation = -1.5707964
 scale = Vector2(0.014914762, 634.5693)
 texture = SubResource("GradientTexture1D_x4jx1")
 
-[node name="background6" type="Sprite2D" parent="SettingsMenu" unique_id=1445710007]
+[node name="background6" type="Sprite2D" parent="SettingsMenu/Shapes" unique_id=1445710007]
 position = Vector2(287.99997, 404)
 rotation = -1.5707964
 scale = Vector2(0.014914762, 634.5693)
 texture = SubResource("GradientTexture1D_x4jx1")
 
-[node name="background7" type="Sprite2D" parent="SettingsMenu" unique_id=1029831994]
+[node name="background7" type="Sprite2D" parent="SettingsMenu/Shapes" unique_id=1029831994]
 position = Vector2(286, 469.00003)
 rotation = -1.5707964
 scale = Vector2(0.014914762, 634.5693)
 texture = SubResource("GradientTexture1D_x4jx1")
 
-[node name="background8" type="Sprite2D" parent="SettingsMenu" unique_id=1483378973]
+[node name="background8" type="Sprite2D" parent="SettingsMenu/Shapes" unique_id=1483378973]
 position = Vector2(302.00003, 538)
 rotation = -1.5707964
 scale = Vector2(0.014914762, 634.5693)
 texture = SubResource("GradientTexture1D_x4jx1")
 
-[node name="background9" type="Sprite2D" parent="SettingsMenu" unique_id=934177308]
+[node name="background9" type="Sprite2D" parent="SettingsMenu/Shapes" unique_id=934177308]
 position = Vector2(306, 606)
 rotation = -1.5707964
 scale = Vector2(0.014914762, 634.5693)
 texture = SubResource("GradientTexture1D_x4jx1")
 
-[node name="background3" type="Sprite2D" parent="SettingsMenu" unique_id=898630397]
+[node name="background3" type="Sprite2D" parent="SettingsMenu/Shapes" unique_id=898630397]
 visible = false
 position = Vector2(299.5, 238.65)
 rotation = -1.5707964
 scale = Vector2(0.24670887, 591.2055)
 texture = SubResource("GradientTexture1D_gdt2y")
+
+[node name="Art" type="Node2D" parent="SettingsMenu" unique_id=1044780490]
+
+[node name="Darukoma3c" type="Sprite2D" parent="SettingsMenu/Art" unique_id=1341377102]
+position = Vector2(365, 57)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_x4jx1")
 
 [node name="labels" type="Control" parent="SettingsMenu" unique_id=452163240]
 layout_mode = 3
@@ -185,6 +195,7 @@ offset_bottom = 605.0
 scale = Vector2(1.775, 1.775)
 
 [node name="labels en" type="Control" parent="SettingsMenu/labels" unique_id=215567798]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -214,7 +225,7 @@ offset_top = 13.0
 offset_right = 380.0
 offset_bottom = 69.0
 theme_override_font_sizes/normal_font_size = 30
-text = "Pashya coma"
+text = "Darucoma"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="SettingsMenu/labels/labels en" unique_id=330014291]
 layout_mode = 0
@@ -494,7 +505,7 @@ offset_top = 13.0
 offset_right = 380.0
 offset_bottom = 57.0
 theme_override_font_sizes/normal_font_size = 30
-text = "パシャコマ"
+text = "ダルコマ"
 
 [node name="interactable" type="Control" parent="SettingsMenu" unique_id=1801154989]
 layout_mode = 3
@@ -548,10 +559,10 @@ scale = Vector2(1.775, 1.775)
 
 [node name="CutFolderIndividualToggle" type="CheckButton" parent="SettingsMenu/interactable/Checkbox" unique_id=326048002]
 layout_mode = 0
-offset_left = 489.0
-offset_top = 481.00003
-offset_right = 533.0
-offset_bottom = 505.00003
+offset_left = 481.0
+offset_top = 481.0
+offset_right = 525.0
+offset_bottom = 505.0
 scale = Vector2(1.775, 1.775)
 disabled = true
 
@@ -565,9 +576,9 @@ scale = Vector2(1.775, 1.775)
 
 [node name="FromLastToggle" type="CheckButton" parent="SettingsMenu/interactable/Checkbox" unique_id=1466018335]
 layout_mode = 0
-offset_left = 489.00003
+offset_left = 481.00003
 offset_top = 544.0
-offset_right = 533.0
+offset_right = 525.0
 offset_bottom = 568.0
 scale = Vector2(1.775, 1.775)
 
@@ -603,7 +614,7 @@ text = "JP"
 
 [node name="ClearSettings" type="Button" parent="SettingsMenu/interactable/Buttons" unique_id=1106570959]
 layout_mode = 0
-offset_left = 380.0
+offset_left = 416.0
 offset_top = 13.0
 offset_right = 584.0
 offset_bottom = 57.0

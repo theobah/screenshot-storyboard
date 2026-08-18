@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Snapping tool"
+config/name="Darucoma"
 run/main_scene="uid://bma8dohyd7rkq"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://64tlmdu0xsby"
 
 [display]
 
