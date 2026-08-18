@@ -134,7 +134,7 @@ func _load():
 	if FileAccess.file_exists(save_setting_path):
 		var file = FileAccess.open(save_setting_path, FileAccess.READ)
 		settings_dic = file.get_var()
-		print(settings_dic)
+		
 		if settings_dic.size() == 12:
 			
 			print("loaded" + str(settings_dic))
@@ -227,6 +227,7 @@ func _process_cuts():
 
 	var cut_range = cut_range.split(",")
 	cut_list = []
+	cut_range_list = []
 	for part in cut_range:
 		var dir = DirAccess.open(file_path)
 		part.strip_edges()
@@ -234,7 +235,6 @@ func _process_cuts():
 			var range= part.split("-")
 			if cut_folder_toggle and not cut_folder_individual_toggle and cut_range_toggle:
 				cut_range_list.append([int(range[0]),int(range[1])])
-				_save("cut_range_list", cut_range_list)
 				dir.make_dir("c" + str(int(range[0])).pad_zeros(3) + "-" +str(int(range[1])).pad_zeros(3))
 				print("made directories")
 				
@@ -253,15 +253,16 @@ func _process_cuts():
 				
 				dir.make_dir("c" + str(int(cut_list[i])).pad_zeros(3))
 				pass
-		
+	print("cut_ranges are" + str(cut_range_list))
 	
 	cut_list.sort()
 	_save("cut_list", cut_list)
+	_save("cut_range_list", cut_range_list)
 	print("saved cuts as", cut_list)
 
 func _change_language():
 	_save("lang", lang)
-	print(lang)
+	
 	if lang == "en":
 		_authenticate_settings()
 		$"labels/labels en".show()

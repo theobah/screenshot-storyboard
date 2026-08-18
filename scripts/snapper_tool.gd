@@ -62,7 +62,7 @@ func _ready():
 	if cut_range_toggle and not from_last_toggle:
 		cut = cut_list[0]
 		_update_UI()
-	print("lang is" + lang)
+	print("lang is " + lang)
 	if lang == "jp":
 		$"UI_top_corner/labels jp".show()
 		$"UI_top_corner/labels en".hide()
@@ -363,7 +363,7 @@ func _load():
 	if FileAccess.file_exists(save_setting_path):
 		var file = FileAccess.open(save_setting_path, FileAccess.READ)
 		settings_dic = file.get_var()
-		print(settings_dic)
+		
 		#_update_variables()
 		file_path = settings_dic.get("file_path")
 		cut_range = settings_dic.get("cut_range")
@@ -383,7 +383,7 @@ func _load():
 			
 		if from_last_toggle and settings_dic.has("cut") and settings_dic.has("panel"):
 			cut = int(settings_dic.get("cut"))
-			print(cut)
+			
 			cut_number = int(cut_list.find(cut))
 			panel = settings_dic.get("panel")
 			print("loaded last cut")
@@ -397,7 +397,7 @@ func _save(setting_name, save_file):
 	var file = FileAccess.open(save_setting_path, FileAccess.WRITE)
 	settings_dic[str(setting_name)] = save_file
 	file.store_var(settings_dic)
-	print(settings_dic)
+	print("settings are: " +str(settings_dic))
 	file.close()
 	
 func _name_capture():
@@ -410,13 +410,11 @@ func _update_UI():
 
 func _calculate_cut_range():
 	var count = 0
-
 	for i in cut_range_list:
-		print(i)
+		print(i.size())
 		if i.size() == 2:
 			
 			if i[0] <= cut and i[1] >= cut:
-				print("in range")
 				return  str(i[0]).pad_zeros(3) + "-" + str(i[1]).pad_zeros(3)
 			else:
 				
@@ -424,6 +422,8 @@ func _calculate_cut_range():
 		else:
 			if i[0] == cut:
 				return  str(cut_range_list[count][0]).pad_zeros(3)
+			else:
+				count+=1
 
 
 func _on_panel_input_text_changed(new_text: String) -> void:
