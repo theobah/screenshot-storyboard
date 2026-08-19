@@ -354,7 +354,7 @@ func capture_screenshot():
 	
 	if OS.get_name() == "macOS":
 		# Convert Godot viewport coordinates to actual screen coordinates
-		var window_pos = get_window().get_screen_rect().position
+		var window_pos = get_window().get_position()
 		var screen_x = int(selec_rec.position.x + window_pos.x)
 		var screen_y = int(selec_rec.position.y + window_pos.y)
 		
@@ -364,8 +364,9 @@ func capture_screenshot():
 			int(selec_rec.size.x),
 			int(selec_rec.size.y)]
 		OS.execute("screencapture", ["-x", "-R", rect_arg, path])
-		image = Image.new()
+		
 	else:
+		
 		cropped.save_png(path)
 	
 	if lang == "en":
