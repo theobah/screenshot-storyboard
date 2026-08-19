@@ -317,6 +317,7 @@ func capture_screenshot():
 	# Take screenshot of the selected area
 	
 	var image = DisplayServer.screen_get_image(0)
+	
 
 	var crop_rect = Rect2i(
 		Vector2i(selec_rec.position),
@@ -348,7 +349,24 @@ func capture_screenshot():
 		path = file_path + "/" + "c" +  str(cut).pad_zeros(3) + "/%s.png" % _name_capture()
 	else:
 		path = file_path + "/%s.png" % _name_capture()
-	cropped.save_png(path)
+		
+	
+	
+	if OS.get_name() == "macOS":
+		# Convert Godot viewport coordinates to actual screen coordinates
+		var window_pos = get_window().get_screen_rect().position
+		var screen_x = int(selec_rec.position.x + window_pos.x)
+		var screen_y = int(selec_rec.position.y + window_pos.y)
+		
+		var rect_arg = "%d,%d,%d,%d" % [
+			screen_x,
+			screen_y,
+			int(selec_rec.size.x),
+			int(selec_rec.size.y)]
+		OS.execute("screencapture", ["-x", "-R", rect_arg, path])
+		image = Image.new()
+	else:
+		cropped.save_png(path)
 	
 	if lang == "en":
 		$"UI_top_corner/labels en/print_menu".text = "Screenshot saved to: %s" % path

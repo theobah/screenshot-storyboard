@@ -196,7 +196,7 @@ func _authenticate_settings():
 		authenticated = false
 		$interactable/Buttons/Start.disabled = true
 		if lang == "en":
-				$interactable/Buttons/Start.text = "Input episode number to start"
+			$interactable/Buttons/Start.text = "Input episode number to start"
 		else:
 			$interactable/Buttons/Start.text = "開始する話数を入力"
 		
@@ -207,7 +207,7 @@ func _authenticate_settings():
 		$interactable/Buttons/Start.disabled = true
 		
 		if lang == "en":
-				$interactable/Buttons/Start.text = "開始するカット範囲を入力"
+			$interactable/Buttons/Start.text = "Input valid file path"
 		else:
 			$interactable/Buttons/Start.text = "有効なファイルパスを入力して開始"
 		
@@ -262,9 +262,9 @@ func _process_cuts():
 
 func _change_language():
 	_save("lang", lang)
-	
+	_authenticate_settings()
 	if lang == "en":
-		_authenticate_settings()
+		
 		$"labels/labels en".show()
 		$"labels/labels jp".hide()
 		$interactable/Buttons/ClearSettings.text = "Clear Settings"
