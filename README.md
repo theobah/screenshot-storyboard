@@ -20,27 +20,27 @@ correct path format should look something like this: C:\document\anime_name\stor
 
 2. Input episode number into the next box, like 1, or 2, or maybe even 3...
 
-3. You can toggle to use a custom range of cuts you want to screenshot. If it is on, manually input the range you want. Please use standard commas and hyphens, if you are on a Japanese keyboard, you may bee
-Press start to start taking screenshots
-image
-In order to take a screenshot you must have the software UI IN FOCUS, and be in screenshot mode by pressing "s". If you need to scroll down your storyboard document, un-toggle screenshot mode (s), scroll, and then re-toggle it to take screenshots again
-image
-Drag to take screenshot.
-The screenshot will save in .png files in the path you inputted, and the cut range folder (if enabled). They will save in the format EpisodeNumber_CutNumber-PanelNumber e.g. ep 5 cut 2 panel 3 is 05_002-3
-image
-if file path set up correctly, screenshots will be saved in folder structure like this in the path you inputted earlier
+3. You can toggle to use a custom range of cuts you want to screenshot. If it is on, manually input the range you want into the next text box. Please use standard commas and hyphens, if you are on a Japanese keyboard, you may need to toggle half width characters.
+   
+4. You have not have toggles to specify in what folder format you want the screenshots to be saved. The folders will save into your input path, and then the screenshots you take will be automatically sorted into them if the option is on.
+   
+5. Press start to start taking screenshots. It will make the relevant folders now
+
+6. Now you can begin to take screenshots. In order to take a screenshot you must have Darucoma's UI IN FOCUS, and be in screenshot mode by pressing "s". If you need to scroll down your storyboard document, un-toggle screenshot mode (s), scroll, and then re-toggle it to take screenshots again.
+   Drag and release to take a screenshot, or cancel it by pressing right click.
+   The screenshot will save in .png files in the path you inputted, and the cut range folder (if enabled). They will save in the format EpisodeNumber_CutNumber-PanelNumber e.g. ep 5 cut 2 panel 3 is 05_002-3
+   if file path set up correctly, screenshots will be saved in folder structure like this in the path you inputted earlier
+  
+  the panel number will automatically increase when you take a screenshot. When you have finished the cut, press "d" to move onto the next cut.
+  Other hotkeys are
+  "a" to decrease cut number
+  "e" to increase panel number
+  "q" to decrease panel number
+
+7. (optional) Screenshot assist can make the process faster. Set a custom aspect ration to lock the screenshot size to that, or set a default size to lock all screenshots to a fixed size. If needed to change it for a pan or zoom, just disable it and then re-enable it when done.
 image
 
-the panel number will automatically increase when you take a screenshot. When you have finished the cut, press "d" to move onto the next cut.
-Other hotkeys are
-"a" to decrease cut number
-"e" to increase panel number
-"q" to decrease panel number
-
-Screenshot assist can make the process faster. Set a custom aspect ration to lock the screenshot size to that, or set a default size to lock all screenshots to a fixed size. If needed to change it for a pan or zoom, just disable it and then re-enable it when done.
-image
 Important:
-Full Japanese version and documentation will be added.
-More settings to adjust format etc to be added.
-Am looking for any feedback for people interested in using it in a production pipeline.
-this is an alpha build so expect bugs, and please report them
+Beta build so still may have issues. Please report them to be via email or github if you find any. 
+I would appreciate any feedback whatsoever, so please get intouch if you use this tool.
+
