@@ -1,29 +1,46 @@
-An alpha test version of my tool built to speed up screenshotting and saving storyboards from television anime.
-UI and UX are temporary, and this release just contains main functionality.
+What is this tool?
+This is a tool mainly intended for artists working in 3D or 2D layout. It is basically an upgraded snipping tool which automatically create folder structures for cuts, saves the screenshots to a specify file path, and names and sorts them them according to the episode, cut, and panel number for the scene you need to work on.
+
+Why did I make it?
+During my time working in a studio in Japan on a television anime production, I did some work on 3D layouts. In order to closely match the storyboards, I was required to save each storyboard panel as a .png before importing them into blender, and the only way my studio did it was by using snipping tool and manually screenshotting and saving each individual panel to the file path they wanted. It felt like a complete waste of time, and I couldn't find a tool online to speed it up so I decided to make my own in godot.
+I hope by sharing it, I can save some time for artists, so they can spend more time creating and less time doing mindless labour.
 
 Requirements:
-Windows system, storyboard file saved as pdf or some format you can scroll on WITHOUT needing the tab in focus
+Windows or mac system, storyboard file saved as pdf or some format you can scroll on WITHOUT needing the tab in focus.
 
 Installation:
-Download source code and then run snapper.exe file
+Go to releases, download exe file, or the zip file and extract it. When you first launch it you may need to give it access to run. 
+For mac users, download the mac build zip and extract. You will need to allow it to run in security settings and then also give it permissions to take screenshots of your screen.
 
-Usage:
+Usage guide:
 
-1.Input path you want to SAVE your screenshots in text box.
+1. Input path you want to SAVE your screenshots into the first text box.
+To get the path, either enter it manually, or in file browser, right click the address bar and press "copy address" and then paste it in the input box.
+correct path format should look something like this: C:\document\anime_name\storyboard_cuts\episode1
 
-2.Input episode number, select whether you want to create folders based on custom cut ranges (or save all the screenshots in one folder), and then input custom cut ranges.
+2. Input episode number into the next box, like 1, or 2, or maybe even 3...
 
-3.Press start to start taking screenshots
+3. You can toggle to use a custom range of cuts you want to screenshot. If it is on, manually input the range you want. Please use standard commas and hyphens, if you are on a Japanese keyboard, you may bee
+Press start to start taking screenshots
+image
+In order to take a screenshot you must have the software UI IN FOCUS, and be in screenshot mode by pressing "s". If you need to scroll down your storyboard document, un-toggle screenshot mode (s), scroll, and then re-toggle it to take screenshots again
+image
+Drag to take screenshot.
+The screenshot will save in .png files in the path you inputted, and the cut range folder (if enabled). They will save in the format EpisodeNumber_CutNumber-PanelNumber e.g. ep 5 cut 2 panel 3 is 05_002-3
+image
+if file path set up correctly, screenshots will be saved in folder structure like this in the path you inputted earlier
+image
 
-4.In order to take a screenshot you must have the software UI IN FOCUS, and be in screenshot mode by pressing s. If you need to scroll down your storyboard document, un-toggle screenshot mode (s), scroll, and then re-toggle it to take screenshots again
+the panel number will automatically increase when you take a screenshot. When you have finished the cut, press "d" to move onto the next cut.
+Other hotkeys are
+"a" to decrease cut number
+"e" to increase panel number
+"q" to decrease panel number
 
-5.Drag to take screenshot.
-The screenshot will save in .png files in the path you inputted, and the cut range folder (if enabled). They will save in the format EpisodeNumber_CutNumber-PanelNumber e.g. ep 5 cut 2 panel 3 is 5_002-3
-
-6.Screenshot assist can make the process faster. Set a custom aspect ration to lock the screenshot size to that, or set a default size to lock all screenshots to a fixed size. If needed to change it for a pan or zoom, just disable it and then re-enable it when done.
-
+Screenshot assist can make the process faster. Set a custom aspect ration to lock the screenshot size to that, or set a default size to lock all screenshots to a fixed size. If needed to change it for a pan or zoom, just disable it and then re-enable it when done.
+image
 Important:
 Full Japanese version and documentation will be added.
-Many bugs.
 More settings to adjust format etc to be added.
 Am looking for any feedback for people interested in using it in a production pipeline.
+this is an alpha build so expect bugs, and please report them
