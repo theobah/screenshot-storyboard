@@ -261,7 +261,7 @@ offset_top = 469.0
 offset_right = 403.0
 offset_bottom = 557.0
 theme_override_font_sizes/normal_font_size = 24
-text = "Make cut folders induvidual (don't use custom range)?"
+text = "Make cut folders individual (don't use custom range)?"
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="SettingsMenu/labels/labels en" unique_id=1088068569]
 layout_mode = 0
@@ -275,9 +275,9 @@ text = "Continue from last sceenshotted cut?"
 [node name="RichTextLabel8" type="RichTextLabel" parent="SettingsMenu/labels/labels en" unique_id=408643869]
 layout_mode = 0
 offset_left = 40.0
-offset_top = 786.0
+offset_top = 769.0
 offset_right = 565.0
-offset_bottom = 866.0
+offset_bottom = 849.0
 theme_override_font_sizes/normal_font_size = 24
 text = "Click when ready to start screenshotting"
 
@@ -396,10 +396,20 @@ editable = false
 layout_mode = 0
 offset_left = 157.0
 offset_top = 47.0
-offset_right = 297.0
+offset_right = 326.0
 offset_bottom = 69.0
 theme_override_font_sizes/normal_font_size = 12
-text = "By Theo Bahns"
+text = "By Theo Bahns
+"
+
+[node name="RichTextLabel15" type="RichTextLabel" parent="SettingsMenu/labels/labels en" unique_id=1183621829]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 920.0
+offset_right = 551.0
+offset_bottom = 942.0
+theme_override_font_sizes/normal_font_size = 12
+text = "get latest version at https://github.com/theobah/screenshot-storyboard/releases"
 
 [node name="labels jp" type="Control" parent="SettingsMenu/labels" unique_id=2142384904]
 anchors_preset = 0
@@ -463,9 +473,9 @@ text = "最後にスクリーンショットを撮影したカットから続行
 [node name="RichTextLabel8" type="RichTextLabel" parent="SettingsMenu/labels/labels jp" unique_id=571956515]
 layout_mode = 0
 offset_left = 11.0
-offset_top = 786.0
+offset_top = 769.0
 offset_right = 588.0
-offset_bottom = 866.0
+offset_bottom = 849.0
 theme_override_font_sizes/normal_font_size = 23
 text = "準備ができたらクリックしてスクリーンショットを開始"
 
@@ -506,6 +516,15 @@ offset_right = 380.0
 offset_bottom = 57.0
 theme_override_font_sizes/normal_font_size = 30
 text = "ダルコマ"
+
+[node name="RichTextLabel16" type="RichTextLabel" parent="SettingsMenu/labels/labels jp" unique_id=666726512]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 920.0
+offset_right = 551.0
+offset_bottom = 942.0
+theme_override_font_sizes/normal_font_size = 12
+text = "get latest version at https://github.com/theobah/screenshot-storyboard/releases"
 
 [node name="interactable" type="Control" parent="SettingsMenu" unique_id=1801154989]
 layout_mode = 3
@@ -622,10 +641,10 @@ text = "Clear settings"
 
 [node name="Start" type="Button" parent="SettingsMenu/interactable/Buttons" unique_id=1332466843]
 layout_mode = 0
-offset_left = 93.0
-offset_top = 836.0
-offset_right = 489.0
-offset_bottom = 944.0
+offset_left = 94.0
+offset_top = 807.0
+offset_right = 490.0
+offset_bottom = 913.0
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_font_sizes/font_size = 19
 theme_override_styles/normal = SubResource("StyleBoxFlat_nt7q6")
