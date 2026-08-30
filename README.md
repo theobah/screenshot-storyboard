@@ -21,15 +21,15 @@ To get the path, either enter it manually, or in file browser, right click the a
 correct path format should look something like this: C:\document\anime_name\storyboard_cuts\episode1
 The format will be slightly different for mac.
 
-3. Input episode number into the next box, like 1, or 2, or maybe even 3...
+2. Input episode number into the next box, like 1, or 2, or maybe even 3...
 
-4. You can toggle to use a custom range of cuts you want to screenshot. If it is on, manually input the range you want into the next text box. Please use standard commas and hyphens, if you are on a Japanese keyboard, you may need to toggle half width characters.
+3. You can toggle to use a custom range of cuts you want to screenshot. If it is on, manually input the range you want into the next text box. Please use standard commas and hyphens, if you are on a Japanese keyboard, you may need to toggle half width characters.
    
-5. You have not have toggles to specify in what folder format you want the screenshots to be saved. The folders will save into your input path, and then the screenshots you take will be automatically sorted into them if the option is on.
+4. You have not have toggles to specify in what folder format you want the screenshots to be saved. The folders will save into your input path, and then the screenshots you take will be automatically sorted into them if the option is on.
    
-6. Press start to start taking screenshots. It will make the relevant folders now
+5. Press start to start taking screenshots. It will make the relevant folders now
 
-7. Now you can begin to take screenshots. In order to take a screenshot you must have Darucoma's UI IN FOCUS, and be in screenshot mode by pressing "s". If you need to scroll down your storyboard document, un-toggle screenshot mode (s), scroll, and then re-toggle it to take screenshots again.
+6. Now you can begin to take screenshots. In order to take a screenshot you must have Darucoma's UI IN FOCUS, and be in screenshot mode by pressing "s". If you need to scroll down your storyboard document, un-toggle screenshot mode (s), scroll, and then re-toggle it to take screenshots again.
    Drag and release to take a screenshot, or cancel it by pressing right click.
    The screenshot will save in .png files in the path you inputted, and the cut range folder (if enabled). They will save in the format EpisodeNumber_CutNumber-PanelNumber e.g. ep 5 cut 2 panel 3 is 05_002-3
    if file path set up correctly, screenshots will be saved in folder structure like this in the path you inputted earlier
@@ -41,7 +41,7 @@ The format will be slightly different for mac.
   "q" to decrease panel number
   "esc" to exit and go back to previous screen.
 
-8. (optional) Screenshot assist can make the process faster. Set a custom aspect ration to lock the screenshot size to that, or set a default size to lock all screenshots to a fixed size. If needed to change it for a pan or zoom, just disable it and then re-enable it when done.
+7. (optional) Screenshot assist can make the process faster. Set a custom aspect ration to lock the screenshot size to that, or set a default size to lock all screenshots to a fixed size. If needed to change it for a pan or zoom, just disable it and then re-enable it when done.
    
 
 Important:
